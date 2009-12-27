@@ -33,6 +33,18 @@ else
 
 
 	sudo mv *.dat $TARGET
-	sudo python setup.py install
+	sudo python setup-igrf.py install
 	sudo rm -rf build *.F bilcal.log igrf_sub.c
+fi
+
+
+wget http://nssdcftp.gsfc.nasa.gov/selected_software/coordinate_transform/archive/cxform-0.71_source.tar.gz
+if [ ! -f cxform-0.71_source.tar.gz ]
+then
+	echo "Failed to download CXFORM source code. Please check your Internet connection."
+else
+	tar -xzf cxform-0.71_source.tar.gz
+	mv cxform-0.71/cxform-manual.c cxform-0.71/cxform-auto.c cxform-0.71/cxform.h .
+	sudo python setup-cxform.py install
+	sudo rm -rf build cxform-0.71/ cxform-auto.c cxform-manual.c cxform-0.71_source.tar.gz cxform.h
 fi

@@ -3,7 +3,7 @@
 
 int MAIN__() { return 0; }
 
-static PyObject *pygrf_dimo(PyObject *self, PyObject *args) {
+static PyObject *igrf_dimo(PyObject *self, PyObject *args) {
 	real year, dimo;
 	if (!PyArg_ParseTuple(args, "f", &year)) {
 		return NULL;
@@ -12,7 +12,7 @@ static PyObject *pygrf_dimo(PyObject *self, PyObject *args) {
 	return Py_BuildValue("f", dimo);
 }
 
-static PyObject *pygrf_lb(PyObject *self, PyObject *args) {
+static PyObject *igrf_lb(PyObject *self, PyObject *args) {
 	real glat, glon, alt, dimo, fl, b0, year;
 	integer icode;
 	if (!PyArg_ParseTuple(args, "ffff", &glat, &glon, &alt, &year)) {
@@ -23,7 +23,7 @@ static PyObject *pygrf_lb(PyObject *self, PyObject *args) {
 	return Py_BuildValue("iff", icode, fl, b0);
 }
 
-static PyObject *pygrf_b(PyObject *self, PyObject *args) {
+static PyObject *igrf_b(PyObject *self, PyObject *args) {
 	real glat, glon, alt, dimo, bnorth, beast, bdown, babs, year;
 	if (!PyArg_ParseTuple(args, "ffff", &glat, &glon, &alt, &year)) {
 		return NULL;
@@ -33,7 +33,7 @@ static PyObject *pygrf_b(PyObject *self, PyObject *args) {
 	return Py_BuildValue("ffff", bnorth, beast, bdown, babs);
 }
 
-static PyObject *pygrf_b0(PyObject *self, PyObject *args) {
+static PyObject *igrf_b0(PyObject *self, PyObject *args) {
 	real glat, glon, alt, dimo, fl, b0, year, stps, bdel, bequ, rr0;
 	integer icode;
 	logical value;
@@ -61,15 +61,15 @@ char *trimwhitespace(char *str) {
 	return str;
 }
 
-static PyMethodDef PygrfMethods[] = {
-	{ "dimo",  pygrf_dimo, METH_VARARGS, "dimo(year)\n\nFind the geomagnetic dipole moment in Gauss (normalized to the Earth's radius) at the specified time (decimal year)" },
-	{ "lb",  pygrf_lb, METH_VARARGS, "pygrf.lb(lat, lon, alt, year)\n\nFind the L-shell and geomagnetic field intensity at the specified latitude, longitude, altitude and decimal year" },
-	{ "b",  pygrf_b, METH_VARARGS, "pygrf.b(lat, lon, alt, year)\n\nFind the Earth's magnetic field value using the spherical harmonics model" },
-	{ "b0",  pygrf_b0, METH_VARARGS, "pygrf.b0(lat, lon, alt, year, stps)\n\nFind the smallest magnetic field strength on a field line" },
+static PyMethodDef IgrfMethods[] = {
+	{ "dimo",  igrf_dimo, METH_VARARGS, "dimo(year)\n\nFind the geomagnetic dipole moment in Gauss (normalized to the Earth's radius) at the specified time (decimal year)" },
+	{ "lb",  igrf_lb, METH_VARARGS, "igrf.lb(lat, lon, alt, year)\n\nFind the L-shell and geomagnetic field intensity at the specified latitude, longitude, altitude and decimal year" },
+	{ "b",  igrf_b, METH_VARARGS, "igrf.b(lat, lon, alt, year)\n\nFind the Earth's magnetic field value using the spherical harmonics model" },
+	{ "b0",  igrf_b0, METH_VARARGS, "igrf.b0(lat, lon, alt, year, stps)\n\nFind the smallest magnetic field strength on a field line" },
 	{ NULL, NULL, 0, NULL }
 };
 
-PyMODINIT_FUNC initpygrf(void) {
-	(void) Py_InitModule("pygrf", PygrfMethods);
+PyMODINIT_FUNC initigrf(void) {
+	(void) Py_InitModule("igrf", IgrfMethods);
 	initize_();
 }

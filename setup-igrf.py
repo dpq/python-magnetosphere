@@ -1,9 +1,9 @@
 #!/usr/bin/python
 from distutils.core import setup, Extension
 
-igrf = Extension('pygrf', sources = ['igrf_sub.c', 'pygrfmodule.c'], libraries = ['m', 'f2c'], library_dirs = ['/usr/lib/'])
+igrf = Extension('igrf', sources = ['igrf_sub.c', 'igrfmodule.c'], libraries = ['m', 'f2c'], library_dirs = ['/usr/lib/'])
 
-setup(name = 'pygrf',
+setup(name = 'igrf',
 	version = '1.0',
 	description = 'IGRF v.10 Python wrapper',
 	author = 'David Parunakian',
