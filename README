@@ -1,0 +1,51 @@
+** About **
+This program contains two Python modules: igrf and cxform.
+
+Module igrf provides several useful methods based on IGRF v.10.
+The wrapper has been written by David Parunakian, Skobeltsyn Institute of Nuclear Physics of the Moscow State University.
+Feel free to contact me with improvement suggestions, questions etc at either rumith@srd.sinp.msu.ru or dp@xientific.info.
+The model itself is the result of hard work of many people from different institutions, such as IAGA and NASA.
+The source code and coefficient files used can be found at ftp://nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/
+More information on IGRF can be found here: http://www.ngdc.noaa.gov/IAGA/vmod/igrf.html
+
+Module cxform provides access to one function - transform(), which can be used for transforming cartesian coordinates
+from one coordinate system to another. Complete documentation on cxform, as well as the list of coordinate systems supported,
+can be found at CXFORM official website http://nssdcftp.gsfc.nasa.gov/selected_software/coordinate_transform/
+
+
+** Installation **
+tar -xzf igrf.tar.gz
+cd igrf
+./install.sh
+
+The above procedure will install coefficient files to /usr/local/lib/igrf. If you wish to install them to another directory (e.g. /var/foobar), run
+./install.sh /var/foobar
+instead. PLEASE ONLY SPECIFY ABSOLUTE PATHS.
+
+** Usage **
+To use igrf in your software after you have installed it, include the following line in your code:
+
+import igrf
+
+After that, you can use the following functions:
+
+igrf.dimo(year): 
+	Find the geomagnetic dipole moment in Gauss (normalized to the Earth's radius) at the specified time (decimal year)
+
+igrf.lb(lat, lon, alt, year):
+	Find the L-shell and geomagnetic field intensity (l, b tuple) at the specified latitude, longitude, altitude and decimal year
+
+igrf.b(lat, lon, alt, year):
+	Find the Earth's magnetic field value (Bnorth, Beast, Bdown, Babs tuple) using the spherical harmonics model
+
+igrf.b0(lat, lon, alt, year, stps):
+	Find the smallest magnetic field strength on a field line. Stps is step size for field line tracing
+
+Latitude and longitude should be specified in the geographic coordinate system.
+Altitude should be specified in kilometers above sea level.
+Decimal year is a float and looks like 2003.45.
+
+
+** Legal **
+This project is distributed under the terms of the GNU General Public License v.3. The full text of the license is available
+in the LICENSE file.
