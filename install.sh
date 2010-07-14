@@ -24,18 +24,16 @@ fi
 #	echo "Failed to download IGRF source code. Please check your Internet connection."
 #else
 
-	mv nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/* .
-	rm -rf nssdcftp.gsfc.nasa.gov
+	cp nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/* .
 	for x in `ls *.for`; do mv $x `echo $x | sed s/.for/.F/`; done
 	f2c igrf_sub.F
 
 	cat igrf_sub.c | sed "s^o__1.ofnm = fout^extern char *trimwhitespace(char *str); char prefix_dp[28] = \"$TARGET\"; 	strcat(prefix_dp, fspec); o__1.ofnm = trimwhitespace(prefix_dp)^" > igrf_sub2.c
 	mv igrf_sub2.c igrf_sub.c
 
-
 	sudo mv *.dat $TARGET
 	sudo python setup-igrf.py install
-	sudo rm -rf build *.F bilcal.log igrf_sub.c
+	sudo rm -rf build *.F bilcal_log.txt 00_readme.txt igrf_sub.c
 
 #fi
 
@@ -47,8 +45,8 @@ fi
 #else
 #	tar -xzf cxform-0.71_source.tar.gz
 
-	mv cxform-0.71/cxform-manual.c cxform-0.71/cxform-auto.c cxform-0.71/cxform.h .
+	cp cxform-0.71/cxform-manual.c cxform-0.71/cxform-auto.c cxform-0.71/cxform.h .
 	sudo python setup-cxform.py install
-	sudo rm -rf build cxform-0.71/ cxform-auto.c cxform-manual.c cxform-0.71_source.tar.gz cxform.h
+	sudo rm -rf build cxform-auto.c cxform-manual.c cxform.h
 
 #fi
