@@ -1,0 +1,5 @@
+; dlltool --export-all --output-def cxform_.def --dllname cxform.dll cxform-auto.o cxform-dlm.o cxform-manual.o
+EXPORTS
+	IDL_Load @ 3 ; 
+	cxform @ 9 ; 
+	CXFORM @ 40 ; 

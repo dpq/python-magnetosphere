@@ -2,7 +2,7 @@
 
 if test -z "$1"
 then
-	TARGET=/usr/local/lib/pygrf/
+	TARGET=/usr/local/lib/igrf/
 else
 	TARGET=$1
 fi
@@ -18,11 +18,12 @@ then
 		exit
 fi
 
-wget -r ftp://nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/
-if [ ! -d nssdcftp.gsfc.nasa.gov]
-then
-	echo "Failed to download IGRF source code. Please check your Internet connection."
-else
+# wget -r ftp://nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/
+#if [ ! -d nssdcftp.gsfc.nasa.gov]
+#then
+#	echo "Failed to download IGRF source code. Please check your Internet connection."
+#else
+
 	mv nssdcftp.gsfc.nasa.gov/models/geomagnetic/igrf/fortran_code/* .
 	rm -rf nssdcftp.gsfc.nasa.gov
 	for x in `ls *.for`; do mv $x `echo $x | sed s/.for/.F/`; done
@@ -35,16 +36,19 @@ else
 	sudo mv *.dat $TARGET
 	sudo python setup-igrf.py install
 	sudo rm -rf build *.F bilcal.log igrf_sub.c
-fi
+
+#fi
 
 
-wget http://nssdcftp.gsfc.nasa.gov/selected_software/coordinate_transform/archive/cxform-0.71_source.tar.gz
-if [ ! -f cxform-0.71_source.tar.gz ]
-then
-	echo "Failed to download CXFORM source code. Please check your Internet connection."
-else
-	tar -xzf cxform-0.71_source.tar.gz
+# wget http://nssdcftp.gsfc.nasa.gov/selected_software/coordinate_transform/archive/cxform-0.71_source.tar.gz
+#if [ ! -f cxform-0.71_source.tar.gz ]
+#then
+#	echo "Failed to download CXFORM source code. Please check your Internet connection."
+#else
+#	tar -xzf cxform-0.71_source.tar.gz
+
 	mv cxform-0.71/cxform-manual.c cxform-0.71/cxform-auto.c cxform-0.71/cxform.h .
 	sudo python setup-cxform.py install
 	sudo rm -rf build cxform-0.71/ cxform-auto.c cxform-manual.c cxform-0.71_source.tar.gz cxform.h
-fi
+
+#fi

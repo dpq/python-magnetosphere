@@ -1,0 +1,383 @@
+   ******************************************************
+   ****** IGRF GEOMAGNETIC FIELD MODEL 1945 - 2000 ******
+   ***********  SHELLG L-VALUE CALCULATION  *************
+************************************************************
+ This program allows you to produce B and L profiles in
+ latitude, longitude, year or altitude.
+ In each of the following windows you will be asked to enter
+ one or more values, defining the conditions for your tables.
+ In each window the current value(s) is (are) shown in the right
+ upper corner (#...#). You can choose the current values by
+ entering / at the prompt.
+ If you enter a wrong character or a value outside the allowed
+ parameter range, the program will ask you for a new entry.
+ After your tables are displayed, you can change any parameter
+ you wish to change and create a new profile.
+ You can leave the program at any point by entering Ctrl Z.
+************************* GOOD LUCK *************************
+
+DO YOU WANT YOUR PROFILES                                #2#
+    DISPLAYED ON YOUR MONITOR: ENTER  0  AT PROMPT
+    STORED IN FILE OUTPUT.IGR: ENTER  1  AT PROMPT
+    DISPLAYED AND STORED:      ENTER  2  AT PROMPT
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+SELECT YOUR VARIABLE:                               #LAST:3#
+
+1  LATITUDE       3  ALTITUDE
+2  LONGITUDE      4  YEAR
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+CHOOSE YOUR VARIABLE RANGE:      BEGIN, END, STEPWIDTH ?
+                               #   100.0,  1000.0,   100.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+GEOD LATITUDE ?   !NORTH!    [DEGREE,DECIMAL]        # 45.1#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+GEOD LONGITUDE ?   !EAST!    [DEGREE,DECIMAL]       # 293.1#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+YEAR(EPOCH) ?         *decimal*         #1985.5#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+OUTPUT OPTION: B OR B/B0 ?                   #0#
+
+   if you enter 0, the absolute magnetic field strength
+   will be listed, otherwise the field strength normalized
+   to the field strength at the magnetic equator is listed
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+/
+
+
+
+
+
+
+
+
+
+
+
+
+    H/km   DIMO  B/Gauss B-NORTH  B-EAST  B-DOWN    DIP    DEC  L-VALUE C
+  100.00  0.3042 0.52942 0.16107 -.05615 0.50118   71.2  -19.2   3.216  2
+  200.00  0.3042 0.50404 0.15406 -.05222 0.47707   71.2  -18.7   3.264  2
+  300.00  0.3042 0.48030 0.14745 -.04865 0.45451   71.1  -18.3   3.313  1
+  400.00  0.3042 0.45808 0.14122 -.04539 0.43340   71.1  -17.8   3.361  1
+  500.00  0.3042 0.43724 0.13534 -.04241 0.41360   71.1  -17.4   3.409  1
+  600.00  0.3042 0.41769 0.12978 -.03968 0.39503   71.0  -17.0   3.457  1
+  700.00  0.3042 0.39931 0.12453 -.03717 0.37757   71.0  -16.6   3.505  1
+  800.00  0.3042 0.38202 0.11955 -.03487 0.36115   71.0  -16.3   3.553  1
+  900.00  0.3042 0.36574 0.11483 -.03275 0.34570   70.9  -15.9   3.601  1
+ 1000.00  0.3042 0.35039 0.11036 -.03080 0.33113   70.9  -15.6   3.649  1
+------- International Geomagnetic Reference Field --- Edition 1995 -------
+LATI=   45.1  LONGI= 293.1  I   DIMO is Dipol   I   C=1  L and B0 correct
+ ALT= 1000.0   YEAR=1985.5  I  Moment in Gauss  I    =2  wrong,  =3 approx.
+--------------------------------------------------------------------------
+
+**** DO YOU WANT TO CONTINUE?
+------------------------------------------------------------
+"0"  QUIT AND EXIT        "1"  NEW PARAMETERS
+------------------------------------------------------------
+1
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  45.1#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #H/km#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #   100.0,  1000.0,   100.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+7
+
+
+CHOOSE YOUR VARIABLE RANGE:      BEGIN, END, STEPWIDTH ?
+                               #   100.0,  1000.0,   100.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+1000,10000,1000
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  45.1#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #H/km#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #  1000.0, 10000.0,  1000.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+0
+
+
+
+
+
+
+
+
+
+
+
+
+    H/km   DIMO  B/Gauss B-NORTH  B-EAST  B-DOWN    DIP    DEC  L-VALUE C
+ 1000.00  0.3042 0.35039 0.11036 -.03080 0.33113   70.9  -15.6   3.649  1
+ 2000.00  0.3042 0.23588 0.07614 -.01761 0.22256   70.7  -13.0   4.134  1
+ 3000.00  0.3042 0.16675 0.05465 -.01091 0.15716   70.5  -11.3   4.622  1
+ 4000.00  0.3042 0.12239 0.04049 -.00718 0.11528   70.4  -10.1   5.107  1
+ 5000.00  0.3042 0.09256 0.03080 -.00494 0.08715   70.3   -9.1   5.596  1
+ 6000.00  0.3042 0.07174 0.02396 -.00353 0.06753   70.3   -8.4   6.092  1
+ 7000.00  0.3042 0.05675 0.01899 -.00260 0.05341   70.3   -7.8   6.593  1
+ 8000.00  0.3042 0.04567 0.01530 -.00196 0.04299   70.3   -7.3   7.093  1
+ 9000.00  0.3042 0.03731 0.01250 -.00151 0.03512   70.3   -6.9   7.590  1
+10000.00  0.3042 0.03088 0.01034 -.00118 0.02907   70.3   -6.5   8.084  1
+------- International Geomagnetic Reference Field --- Edition 1995 -------
+LATI=   45.1  LONGI= 293.1  I   DIMO is Dipol   I   C=1  L and B0 correct
+ ALT=10000.0   YEAR=1985.5  I  Moment in Gauss  I    =2  wrong,  =3 approx.
+--------------------------------------------------------------------------
+!! REMINDER: this field model does not include external sources !!
+
+**** DO YOU WANT TO CONTINUE?
+------------------------------------------------------------
+"0"  QUIT AND EXIT        "1"  NEW PARAMETERS
+------------------------------------------------------------
+1
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  45.1#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #H/km#
+3  ALTITUDE  # 10000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #  1000.0, 10000.0,  1000.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+3
+
+
+ALTITUDE ?    [KM]                                 #10000.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+1000
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  45.1#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #H/km#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #  1000.0, 10000.0,  1000.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+1
+
+
+GEOD LATITUDE ?   !NORTH!    [DEGREE,DECIMAL]        # 45.1#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+30
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  30.0#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #H/km#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #  1000.0, 10000.0,  1000.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+6
+
+
+SELECT YOUR VARIABLE:                               #LAST:3#
+
+1  LATITUDE       3  ALTITUDE
+2  LONGITUDE      4  YEAR
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+4
+
+
+CHOOSE YOUR VARIABLE RANGE:      BEGIN, END, STEPWIDTH ?
+                               #  1000.0, 10000.0,  1000.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+1945,2015,5
+
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  30.0#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #YEAR#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1985.5#           #  1945.0,  2000.0,     5.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+0
+
+
+
+
+
+
+
+
+
+
+
+
+     YEAR   DIMO  B/Gauss B-NORTH  B-EAST  B-DOWN    DIP    DEC  L-VALUE C
+  1945.00  0.3122 0.32047 0.14421 -.02172 0.28536   62.9   -8.6   2.220  1
+  1950.00  0.3118 0.31952 0.14491 -.02244 0.28389   62.7   -8.8   2.209  1
+  1955.00  0.3113 0.31854 0.14586 -.02342 0.28222   62.4   -9.1   2.199  1
+  1960.00  0.3104 0.31704 0.14713 -.02436 0.27978   61.9   -9.4   2.183  1
+  1965.00  0.3095 0.31519 0.14811 -.02543 0.27705   61.5   -9.7   2.167  1
+  1970.00  0.3083 0.31294 0.14947 -.02637 0.27367   61.0  -10.0   2.148  1
+  1975.00  0.3070 0.31021 0.15071 -.02735 0.26975   60.4  -10.3   2.127  1
+  1980.00  0.3057 0.30649 0.15096 -.02849 0.26521   59.9  -10.7   2.108  1
+  1985.00  0.3043 0.30315 0.15128 -.02957 0.26104   59.4  -11.1   2.087  1
+  1990.00  0.3032 0.30006 0.15164 -.03045 0.25712   59.0  -11.4   2.068  1
+  1995.00  0.3022 0.29705 0.15204 -.03132 0.25326   58.5  -11.6   2.047  1
+  2000.00  0.3012 0.29345 0.15242 -.03174 0.24875   58.0  -11.8   2.025  1
+  2005.00  0.3003 0.28984 0.15282 -.03190 0.24420   57.4  -11.8   2.004  1
+  2010.00  0.3004 0.28986 0.15281 -.03187 0.24424   57.4  -11.8   2.004  1
+  2015.00  0.2997 0.28654 0.15333 -.03188 0.23995   56.9  -11.7   1.982  1
+------- International Geomagnetic Reference Field --- Edition 1995 -------
+ LATI=   30.0  LONGI= 293.1  I   DIMO is Dipol   I   C=1  L and B0 correct
+  ALT= 1000.0   YEAR=2015.0  I  Moment in Gauss  I    =2  wrong,  =3  approx.
+--------------------------------------------------------------------------
+
+**** DO YOU WANT TO CONTINUE?
+------------------------------------------------------------
+"0"  QUIT AND EXIT        "1"  NEW PARAMETERS
+------------------------------------------------------------
+1
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  30.0#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #YEAR#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #2000.0#           #  1945.0,  2000.0,     5.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+4
+
+
+YEAR(EPOCH) ?         *decimal*         #2000.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+1995
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  30.0#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #YEAR#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1995.0#           #  1945.0,  2000.0,     5.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+6
+
+
+SELECT YOUR VARIABLE:                               #LAST:4#
+
+1  LATITUDE       3  ALTITUDE
+2  LONGITUDE      4  YEAR
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+1
+
+
+CHOOSE YOUR VARIABLE RANGE:      BEGIN, END, STEPWIDTH ?
+                               #  1945.0,  2000.0,     5.0#
+------------------------------------------------------------
+Enter / to use previous value(s) (see # .. #); Ctrl Z to exit
+-80,80,20
+
+
+**** WHICH PARAMETER DO YOU WANT TO CHANGE?
+------------------------------------------------------------
+0  NO FURTHER CHANGES, CALCULATE PROFILE
+1  LATITUDE  #  30.0#       5  DISPLAY OR STORE
+2  LONGITUDE # 293.1#       6  SELECTION OF VARIABLE  #LATI#
+3  ALTITUDE  #  1000.0#     7  VARIABLE RANGE
+4  YEAR      #1995.0#           #   -80.0,    80.0,    20.0#
+                            8  B OR B/B0
+------------------------------------------------------------
+ENTER NUMBER
+0
+
+
+
+
+
+
+
+
+
+
+
+
+    LATI   DIMO    B/B0  B-NORTH  B-EAST  B-DOWN    DIP    DEC  L-VALUE C
+  -80.00  0.3021 310.936 0.10062 0.04627 -.30864  -70.3   24.7   6.596  1
+  -60.00  0.3021  11.854 0.13016 0.02925 -.21172  -57.8   12.7   2.425  1
+  -40.00  0.3021   2.105 0.13885 0.00865 -.12325  -41.5    3.6   1.509  1
+  -20.00  0.3021   1.022 0.15771 -.00938 -.03933  -14.0   -3.4   1.241  1
+    0.00  0.3021   1.300 0.17571 -.02240 0.07077   21.8   -7.3   1.274  1
+   20.00  0.3021   3.697 0.16803 -.02961 0.19495   48.8  -10.0   1.633  1
+   40.00  0.3021  24.795 0.12767 -.03161 0.30420   66.6  -13.9   2.843  1
+   60.00  0.3021 966.671 0.06388 -.02775 0.36494   79.2  -23.5   9.204  1
+   80.00  0.30219999.999 0.01140 -.01756 0.37588   86.8  -57.0 509.552  3
+------- International Geomagnetic Reference Field --- Edition 1995 -------
+LATI=   80.0  LONGI= 293.1  I   DIMO is Dipol   I   C=1  L and B0 correct
+ ALT= 1000.0   YEAR=1995.0  I  Moment in Gauss  I    =2  wrong,  =3 approx.
+--------------------------------------------------------------------------
+
+**** DO YOU WANT TO CONTINUE?
+------------------------------------------------------------
+"0"  QUIT AND EXIT        "1"  NEW PARAMETERS
+------------------------------------------------------------
+0
+FORTRAN STOP
+
