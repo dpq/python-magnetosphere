@@ -5,14 +5,16 @@ cxform = Extension('magnetosphere.cxform', sources = ['cxformmodule.c',
     'cxform-manual.c', 'cxform-auto.c'])
 igrf = Extension('magnetosphere.igrf', sources = ['igrf_sub.c',
     'igrfmodule.c'], libraries = ['m', 'f2c'], library_dirs = ['/usr/lib/'])
+rigidity = Extension('magnetosphere.rigidity', sources = ['rigidity.c',
+		'rigiditymodule.c'], libraries = ['m', 'f2c'], library_dirs = ['/usr/lib/'])
 
 setup(name='Magnetosphere',
-    version='0.1',
+    version='0.11',
     description='A collection of useful libraries for Earth & Space scientists',
     author='David Parunakian',
     author_email='dp@xientific.info',
     url='http://python-magnetosphere.googlecode.com',
-    ext_modules=[igrf,cxform],
+    ext_modules=[igrf,cxform,rigidity],
     packages=['magnetosphere'],
     data_files=[('/usr/lib/igrf',
         ['dat/dgrf1945.dat', 'dat/dgrf1950.dat', 'dat/dgrf1955.dat',
